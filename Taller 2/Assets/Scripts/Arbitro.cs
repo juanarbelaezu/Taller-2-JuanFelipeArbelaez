@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum fase
 {
@@ -37,9 +38,15 @@ public class Arbitro : MonoBehaviour
     private int crittercount = 0;
     private int crittercounterop = 0;
 
+    public Text vidapl;
+    public Text vidaop;
+
     // Commandos
 
     private IaAttack iattack;
+    private IaSupAtk supatk;
+    private IaSupDef supdef;
+    private IaSupSpe supspe;
 
     void Awake()
     {
@@ -81,7 +88,6 @@ public class Arbitro : MonoBehaviour
             fase = fase.EnemyTurn;
         }
 
-
         if (fase == fase.Playerturn)
         {
             Playerturn();
@@ -94,6 +100,9 @@ public class Arbitro : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+
+        vidapl.text = statspl.Hp.ToString();
+        vidaop.text = statsop.Hp.ToString();
     }
 
     void StartBattle()
@@ -103,8 +112,11 @@ public class Arbitro : MonoBehaviour
         iacritter = Instantiate(opt.crittersop[0], enemyspwan);
         statsop = iacritter.GetComponent<Critter>();
         iattack = new IaAttack(iacritter, plcritter, statspl, statsop);
+        supatk = new IaSupAtk(iacritter, statsop);
+        supdef = new IaSupDef(iacritter, statsop);
+        supspe = new IaSupSpe(iacritter, statsop);
 
-        if(statspl.Speed > statsop.Speed)
+        if (statspl.Speed > statsop.Speed)
         {
             fase = fase.Playerturn;
         }
@@ -150,6 +162,7 @@ public class Arbitro : MonoBehaviour
             statsop.Hp -= damageVal;
             Debug.Log("Daño realizado al oponente" + damageVal);
             fase = fase.EnemyTurn;
+            vidaop.text = statsop.Hp.ToString();
             EnemyTurn();
         }
         else if (statspl.afinidad == afinidad.Dark && statsop.afinidad == afinidad.Light || statspl.afinidad == afinidad.Light && statsop.afinidad == afinidad.Dark || statspl.afinidad == afinidad.Fire && statsop.afinidad == afinidad.Water || statspl.afinidad == afinidad.Water && statsop.afinidad == afinidad.Wind || statspl.afinidad == afinidad.Earth && statsop.afinidad == afinidad.Wind)
@@ -158,6 +171,7 @@ public class Arbitro : MonoBehaviour
             statsop.Hp -= damageVal;
             Debug.Log("Daño realizado al oponente" + damageVal);
             fase = fase.EnemyTurn;
+            vidaop.text = statsop.Hp.ToString();
             EnemyTurn();
         }
         else if (statspl.afinidad == afinidad.Fire && statsop.afinidad == afinidad.Earth)
@@ -166,6 +180,7 @@ public class Arbitro : MonoBehaviour
             statsop.Hp -= damageVal;
             Debug.Log("Daño realizado al oponente" + damageVal);
             fase = fase.EnemyTurn;
+            vidaop.text = statsop.Hp.ToString();
             EnemyTurn();
         }
         else
@@ -174,6 +189,7 @@ public class Arbitro : MonoBehaviour
             statsop.Hp -= damageVal;
             Debug.Log("Daño realizado al oponente" + damageVal);
             fase = fase.EnemyTurn;
+            vidaop.text = statsop.Hp.ToString();
             EnemyTurn();
         }
     }
@@ -203,12 +219,14 @@ public class Arbitro : MonoBehaviour
             crittercount += 1;
             plcritter = Instantiate(pl.critters[crittercount], plspawn);
             statspl = plcritter.GetComponent<Critter>();
+            vidapl.text = statspl.Hp.ToString();
         }
         else if (iacritter == null)
         {
             crittercounterop += 1;
             iacritter = Instantiate(pl.critters[crittercounterop], enemyspwan);
             statsop = plcritter.GetComponent<Critter>();
+            vidaop.text = statsop.Hp.ToString();
         }
     }
 
@@ -221,11 +239,37 @@ public class Arbitro : MonoBehaviour
         if(statsop.Support == false)
         {
             iattack.Execute();
+            vidapl.text = statspl.Hp.ToString();
             fase = fase.Playerturn;
         }
         else if(statsop.Support == true)
         {
             int rnd = Random.Range(0, 3);
+
+            if(rnd == 0)
+            {
+                iattack.Execute();
+                vidapl.text = statspl.Hp.ToString();
+                fase = fase.Playerturn;
+            }
+            if(rnd == 1)
+            {
+                supatk.Execute();
+                Debug.Log("Oponente Aumento ataque");
+                fase = fase.Playerturn;
+            }
+            if (rnd == 2)
+            {
+                supdef.Execute();
+                Debug.Log("Oponente Aumento defensa");
+                fase = fase.Playerturn;
+            }
+            if (rnd == 3)
+            {
+                supspe.Execute();
+                Debug.Log("Oponente Aumento velocidad");
+                fase = fase.Playerturn;
+            }
         }
     }
 }

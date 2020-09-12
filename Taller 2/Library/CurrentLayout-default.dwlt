@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 353
     height: 460
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2cf4ffff
-      m_LastClickedID: -3028
-      m_ExpandedIDs: 6afbffff94330000f6330000
+      m_SelectedIDs: ca330000
+      m_LastClickedID: 13258
+      m_ExpandedIDs: 14e3ffffa0e9ffff6afbffffee330000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -487,9 +487,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -89.39736, y: -47.945618, z: 22.908613}
+    m_Target: {x: 205.07687, y: 89.925964, z: 256.2314}
     speed: 2
-    m_Value: {x: -89.39736, y: -47.945618, z: 22.908613}
+    m_Value: {x: 205.07687, y: 89.925964, z: 256.2314}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -535,13 +535,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.20334658, y: 0.54886144, z: -0.13974388, w: -0.7986694}
+    m_Target: {x: -0.19422112, y: 0.20200837, z: -0.0409092, w: -0.9590606}
     speed: 2
-    m_Value: {x: -0.2033466, y: 0.5488615, z: -0.1397439, w: -0.79866946}
+    m_Value: {x: -0.19422112, y: 0.20200837, z: -0.0409092, w: -0.9590606}
   m_Size:
-    m_Target: 65.45509
+    m_Target: 461.99283
     speed: 2
-    m_Value: 65.45509
+    m_Value: 461.99283
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -631,11 +631,11 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\ASUS Q551\Desktop\Taller-2-JuanFelipeArbelaez\Taller
     2
@@ -643,9 +643,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 52340000
-    m_LastClickedID: 13394
-    m_ExpandedIDs: 000000004e340000
+    m_SelectedIDs: 58340000
+    m_LastClickedID: 13400
+    m_ExpandedIDs: 0000000050340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -673,7 +673,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e340000
+    m_ExpandedIDs: 0000000050340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300007649000066380000c86a00002a4100001844000080450000064700002c4a00009c4f000088460000b2340000b03400002c3500002e3500008234000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 13160
+  m_LastSelectedObjectID: 13258
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
