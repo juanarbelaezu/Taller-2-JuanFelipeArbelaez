@@ -107,7 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombrec: Earth Critter
-  atk: 0
-  def: 0
-  speed: 0
+  atk: 2
+  def: 3
+  speed: 3
+  support: 0
+  power: 2
+  hp: 1
   afinidad: 3
