@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum fase
 {
@@ -35,8 +36,8 @@ public class Arbitro : MonoBehaviour
     public GameObject attack;
     public GameObject suporttab;
 
-    private int crittercount = 0;
-    private int crittercounterop = 0;
+    [SerializeField] int crittercount = 0;
+    [SerializeField] int crittercounterop = 0;
 
     public Text vidapl;
     public Text vidaop;
@@ -73,14 +74,14 @@ public class Arbitro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (plcritter == null && crittercount < pl.critters.Length)
+        if (plcritter == null)
         {
             crittercount += 1;
             plcritter = Instantiate(pl.critters[crittercount], plspawn);
             statspl = plcritter.GetComponent<Critter>();
             fase = fase.Playerturn;
         }
-        else if (iacritter == null && crittercounterop < opt.crittersop.Length)
+        else if (iacritter == null)
         {
             crittercounterop += 1;
             iacritter = Instantiate(pl.critters[crittercounterop], enemyspwan);
@@ -103,6 +104,18 @@ public class Arbitro : MonoBehaviour
 
         vidapl.text = statspl.Hp.ToString();
         vidaop.text = statsop.Hp.ToString();
+
+        if(crittercount > 3)
+        {
+            fase = fase.Lost;
+            SceneManager.LoadScene("Lost");
+        }
+
+        if (crittercounterop > 3)
+        {
+            fase = fase.Win;
+            SceneManager.LoadScene("Win");
+        }
     }
 
     void StartBattle()
@@ -198,18 +211,25 @@ public class Arbitro : MonoBehaviour
     {
         statspl.Atk += 0.2f;
         suporttab.SetActive(false);
+        fase = fase.EnemyTurn;
+        EnemyTurn();
     }
 
     public void PlayerDefSup()
     {
         statspl.Def += 0.2f;
         suporttab.SetActive(false);
+        fase = fase.EnemyTurn;
+        EnemyTurn();
+
     }
 
     public void PlayerSpeedSup()
     {
         statspl.Speed += 0.2f;
         suporttab.SetActive(false);
+        fase = fase.EnemyTurn;
+        EnemyTurn();
     }
 
     public void Result()

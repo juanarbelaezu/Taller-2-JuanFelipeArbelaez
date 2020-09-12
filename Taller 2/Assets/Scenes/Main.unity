@@ -667,8 +667,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameop: Rival
   crittersop:
-  - {fileID: 9056664715931352140, guid: f3982cee9976eca42b46cd376651ea32, type: 3}
-  - {fileID: 6168767880569039027, guid: 8ca8d7f2451a04641a57c673834a3708, type: 3}
+  - {fileID: 2180996871642673863, guid: 607d35eb7ad4b514aab2c54d48bbc764, type: 3}
+  - {fileID: 4203094681481312966, guid: 749c45ea3c35be94ead66f46e2773259, type: 3}
+  - {fileID: 4886155737811756972, guid: d1d06d524adf9e94fb3fdc9b0eb759ab, type: 3}
+  - {fileID: 1207028064}
   listacrittersop: []
 --- !u!136 &764023520
 CapsuleCollider:
@@ -1158,6 +1160,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193990802}
   m_CullTransparentMesh: 0
+--- !u!1 &1207028064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207028065}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1207028065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207028064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205.44739, y: 90.32732, z: 256.7369}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1273395751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1380,8 @@ MonoBehaviour:
   fase: 0
   attack: {fileID: 58420}
   suporttab: {fileID: 1588494137}
+  crittercount: 0
+  crittercounterop: 0
   vidapl: {fileID: 1964062977}
   vidaop: {fileID: 2103930811}
 --- !u!4 &1316611951
@@ -1607,6 +1641,8 @@ MonoBehaviour:
   critters:
   - {fileID: 6168767880569039027, guid: 8ca8d7f2451a04641a57c673834a3708, type: 3}
   - {fileID: 9056664715931352140, guid: f3982cee9976eca42b46cd376651ea32, type: 3}
+  - {fileID: 3168710838034505924, guid: e37f7d459c7568640acd96e1c634873e, type: 3}
+  - {fileID: 1207028064}
   listacritterspl: []
 --- !u!136 &1768871785
 CapsuleCollider:
