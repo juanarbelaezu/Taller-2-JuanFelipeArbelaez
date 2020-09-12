@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Arbitro.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
     <Compile Include="Assets\Scripts\ICommand.cs" />
+    <Compile Include="Assets\Scripts\IaAttack.cs" />
     <Compile Include="Assets\Scripts\Oponent.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="UnityEngine">

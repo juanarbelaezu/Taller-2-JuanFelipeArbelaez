@@ -112,5 +112,5 @@ MonoBehaviour:
   speed: 3
   support: 0
   power: 2
-  hp: 1
+  hp: 50
   afinidad: 3

@@ -37,6 +37,10 @@ public class Arbitro : MonoBehaviour
     private int crittercount = 0;
     private int crittercounterop = 0;
 
+    // Commandos
+
+    private IaAttack iattack;
+
     void Awake()
     {
         if (instance == null)
@@ -90,9 +94,6 @@ public class Arbitro : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-
-        
-
     }
 
     void StartBattle()
@@ -101,6 +102,7 @@ public class Arbitro : MonoBehaviour
         statspl = plcritter.GetComponent<Critter>();
         iacritter = Instantiate(opt.crittersop[0], enemyspwan);
         statsop = iacritter.GetComponent<Critter>();
+        iattack = new IaAttack(iacritter, plcritter, statspl, statsop);
 
         if(statspl.Speed > statsop.Speed)
         {
@@ -215,5 +217,15 @@ public class Arbitro : MonoBehaviour
         timer = 60;
         attack.SetActive(false);
         suporttab.SetActive(false);
+
+        if(statsop.Support == false)
+        {
+            iattack.Execute();
+            fase = fase.Playerturn;
+        }
+        else if(statsop.Support == true)
+        {
+            int rnd = Random.Range(0, 3);
+        }
     }
 }
